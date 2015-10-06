@@ -359,7 +359,7 @@ include $(CLEAR_VARS)
 LOCAL_MODULE := libcompiler_rt-extras
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := STATIC_LIBRARIES
-LOCAL_CLANG := true
+LOCAL_CLANG := false
 LOCAL_SRC_FILES := $(libcompiler_rt_extras_SRC_FILES)
 LOCAL_ADDITIONAL_DEPENDENCIES := $(LOCAL_PATH)/Android.mk
 LOCAL_ADDRESS_SANITIZER := false
@@ -374,7 +374,7 @@ include $(BUILD_STATIC_LIBRARY)
 include $(CLEAR_VARS)
 
 LOCAL_MODULE := libcompiler_rt-extras
-LOCAL_CLANG := true
+LOCAL_CLANG := false
 LOCAL_SRC_FILES := $(libcompiler_rt_extras_SRC_FILES)
 LOCAL_ADDRESS_SANITIZER := false
 LOCAL_MULTILIB := both
@@ -395,7 +395,7 @@ LOCAL_MODULE := libcompiler_rt
 LOCAL_CFLAGS_arm += -D__ARM_EABI__
 LOCAL_CFLAGS_mips64 += -DCRT_HAS_128BIT -DCRT_LDBL_128BIT
 LOCAL_ASFLAGS := -integrated-as
-LOCAL_CLANG := true
+LOCAL_CLANG := false
 LOCAL_SRC_FILES_arm := $(call get-libcompiler-rt-source-files,arm)
 LOCAL_SRC_FILES_arm64 := $(call get-libcompiler-rt-source-files,arm64)
 LOCAL_SRC_FILES_mips := $(call get-libcompiler-rt-source-files,mips)
@@ -418,7 +418,7 @@ include $(CLEAR_VARS)
 
 LOCAL_MODULE := libcompiler_rt
 LOCAL_ASFLAGS := -integrated-as
-LOCAL_CLANG := true
+LOCAL_CLANG := false
 LOCAL_SRC_FILES := $(call get-libcompiler-rt-source-files,x86_64)
 LOCAL_ADDRESS_SANITIZER := false
 LOCAL_ADDITIONAL_DEPENDENCIES := $(LOCAL_PATH)/Android.mk
@@ -448,7 +448,7 @@ include $(BUILD_HOST_STATIC_LIBRARY)
 include $(CLEAR_VARS)
 
 LOCAL_MODULE = libprofile_rt
-LOCAL_CLANG := true
+LOCAL_CLANG := false
 LOCAL_SRC_FILES = lib/profile/GCDAProfiling.c
 LOCAL_ADDRESS_SANITIZER := false
 LOCAL_MULTILIB := both
