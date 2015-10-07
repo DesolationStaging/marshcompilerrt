@@ -18,7 +18,6 @@ CheckArches = \
     if [ "X$(3)" != X ]; then \
       for arch in $(1); do \
         if $(CC) -arch $$arch -c \
-            -integrated-as \
             $(ProjSrcRoot)/make/platform/clang_darwin_test_input.c \
             -isysroot $(3) \
             -o /dev/null > /dev/null 2> /dev/null; then \

@@ -393,9 +393,9 @@ include $(CLEAR_VARS)
 
 LOCAL_MODULE := libcompiler_rt
 LOCAL_CFLAGS_arm += -D__ARM_EABI__
+LOCAL_ASFLAGS += -integrated-as
 LOCAL_CFLAGS_mips64 += -DCRT_HAS_128BIT -DCRT_LDBL_128BIT
-LOCAL_ASFLAGS := -integrated-as
-LOCAL_CLANG := false
+LOCAL_CLANG := true
 LOCAL_SRC_FILES_arm := $(call get-libcompiler-rt-source-files,arm)
 LOCAL_SRC_FILES_arm64 := $(call get-libcompiler-rt-source-files,arm64)
 LOCAL_SRC_FILES_mips := $(call get-libcompiler-rt-source-files,mips)
@@ -417,7 +417,6 @@ include $(BUILD_STATIC_LIBRARY)
 include $(CLEAR_VARS)
 
 LOCAL_MODULE := libcompiler_rt
-LOCAL_ASFLAGS := -integrated-as
 LOCAL_CLANG := false
 LOCAL_SRC_FILES := $(call get-libcompiler-rt-source-files,x86_64)
 LOCAL_ADDRESS_SANITIZER := false

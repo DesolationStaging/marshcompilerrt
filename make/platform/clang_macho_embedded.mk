@@ -13,7 +13,6 @@ CheckArches = \
     result=""; \
     for arch in $(1); do \
       if $(CC) -arch $$arch -c \
-	  -integrated-as \
 	  $(ProjSrcRoot)/make/platform/clang_macho_embedded_test_input.c \
 	  -o /dev/null > /dev/null 2> /dev/null; then \
         result="$$result$$arch "; \
